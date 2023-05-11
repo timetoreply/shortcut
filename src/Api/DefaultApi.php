@@ -32,7 +32,9 @@ use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Psr7\MultipartStream;
+use GuzzleHttp\Psr7\Query;
 use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Psr7\Utils;
 use GuzzleHttp\RequestOptions;
 use InvalidArgumentException;
 use RuntimeException;
@@ -119,8 +121,6 @@ use Timetoreply\Shortcut\Model\UpdateTask;
 use Timetoreply\Shortcut\Model\UploadedFile;
 use Timetoreply\Shortcut\Model\Workflow;
 use Timetoreply\Shortcut\ObjectSerializer;
-use function GuzzleHttp\Psr7\build_query;
-use function GuzzleHttp\Psr7\try_fopen;
 
 /**
  * DefaultApi Class Doc Comment
@@ -330,7 +330,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -351,7 +351,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -610,7 +610,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -631,7 +631,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -871,7 +871,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -892,7 +892,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1150,7 +1150,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -1171,7 +1171,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1448,7 +1448,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -1469,7 +1469,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1721,7 +1721,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -1742,7 +1742,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1982,7 +1982,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -2003,7 +2003,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2243,7 +2243,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -2264,7 +2264,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2504,7 +2504,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -2525,7 +2525,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2773,7 +2773,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -2794,7 +2794,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -3034,7 +3034,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -3055,7 +3055,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -3295,7 +3295,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -3316,7 +3316,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -3556,7 +3556,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -3577,7 +3577,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -3835,7 +3835,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -3856,7 +3856,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -4098,7 +4098,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -4119,7 +4119,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -4394,7 +4394,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -4415,7 +4415,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -4677,7 +4677,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -4698,7 +4698,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -4923,7 +4923,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -4944,7 +4944,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'DELETE',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -5153,7 +5153,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -5174,7 +5174,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'DELETE',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -5383,7 +5383,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -5404,7 +5404,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'DELETE',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -5613,7 +5613,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -5634,7 +5634,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'DELETE',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -5860,7 +5860,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -5881,7 +5881,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'DELETE',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -6092,7 +6092,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -6113,7 +6113,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'DELETE',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -6322,7 +6322,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -6343,7 +6343,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'DELETE',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -6552,7 +6552,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -6573,7 +6573,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'DELETE',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -6782,7 +6782,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -6803,7 +6803,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'DELETE',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -7012,7 +7012,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -7033,7 +7033,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'DELETE',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -7236,7 +7236,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -7257,7 +7257,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'DELETE',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -7466,7 +7466,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -7487,7 +7487,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'DELETE',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -7696,7 +7696,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -7717,7 +7717,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'DELETE',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -7943,7 +7943,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -7964,7 +7964,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'DELETE',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -8175,7 +8175,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -8196,7 +8196,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'DELETE',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -8434,7 +8434,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -8455,7 +8455,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'DELETE',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -8685,7 +8685,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -8706,7 +8706,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'DELETE',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -8899,7 +8899,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -8920,7 +8920,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -9109,7 +9109,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -9130,7 +9130,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -9319,7 +9319,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -9340,7 +9340,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -9529,7 +9529,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -9550,7 +9550,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -9739,7 +9739,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -9760,7 +9760,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -9949,7 +9949,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -9970,7 +9970,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -10200,7 +10200,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -10221,7 +10221,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -10449,7 +10449,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -10470,7 +10470,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -10714,7 +10714,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -10735,7 +10735,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -10981,7 +10981,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -11002,7 +11002,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -11248,7 +11248,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -11269,7 +11269,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -11532,7 +11532,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -11553,7 +11553,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -11783,7 +11783,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -11804,7 +11804,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -12042,7 +12042,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -12063,7 +12063,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -12309,7 +12309,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -12330,7 +12330,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -12576,7 +12576,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -12597,7 +12597,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -12843,7 +12843,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -12864,7 +12864,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -13110,7 +13110,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -13131,7 +13131,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -13377,7 +13377,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -13398,7 +13398,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -13656,7 +13656,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -13677,7 +13677,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -13925,7 +13925,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -13946,7 +13946,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -14192,7 +14192,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -14213,7 +14213,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -14459,7 +14459,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -14480,7 +14480,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -14726,7 +14726,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -14747,7 +14747,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -15010,7 +15010,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -15031,7 +15031,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -15279,7 +15279,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -15300,7 +15300,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -15563,7 +15563,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -15584,7 +15584,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -15832,7 +15832,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -15853,7 +15853,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -16081,7 +16081,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -16102,7 +16102,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -16346,7 +16346,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -16367,7 +16367,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -16595,7 +16595,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -16616,7 +16616,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -16842,7 +16842,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -16863,7 +16863,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -17107,7 +17107,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -17128,7 +17128,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -17386,7 +17386,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -17407,7 +17407,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -17649,7 +17649,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -17670,7 +17670,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -17898,7 +17898,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -17919,7 +17919,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -18175,7 +18175,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -18196,7 +18196,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -18426,7 +18426,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -18447,7 +18447,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -18703,7 +18703,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -18724,7 +18724,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -18954,7 +18954,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -18975,7 +18975,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -19219,7 +19219,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -19240,7 +19240,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -19498,7 +19498,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -19519,7 +19519,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -19761,7 +19761,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -19782,7 +19782,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -20010,7 +20010,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -20031,7 +20031,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -20269,7 +20269,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -20290,7 +20290,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -20536,7 +20536,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -20557,7 +20557,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -20785,7 +20785,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -20806,7 +20806,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -21032,7 +21032,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -21053,7 +21053,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -21279,7 +21279,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -21300,7 +21300,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -21556,7 +21556,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -21577,7 +21577,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -21825,7 +21825,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -21846,7 +21846,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -22074,7 +22074,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -22095,7 +22095,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -22341,7 +22341,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -22362,7 +22362,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -22610,7 +22610,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -22631,7 +22631,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -22879,7 +22879,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -22900,7 +22900,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -23148,7 +23148,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -23169,7 +23169,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -23417,7 +23417,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -23438,7 +23438,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -23678,7 +23678,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -23699,7 +23699,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -23945,7 +23945,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -23966,7 +23966,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -24189,7 +24189,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -24210,7 +24210,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -24454,7 +24454,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -24475,7 +24475,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -24743,7 +24743,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -24764,7 +24764,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -25027,7 +25027,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -25048,7 +25048,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -25310,7 +25310,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -25331,7 +25331,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -25608,7 +25608,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -25629,7 +25629,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -25891,7 +25891,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -25912,7 +25912,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -26180,7 +26180,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -26201,7 +26201,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -26461,7 +26461,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -26482,7 +26482,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -26742,7 +26742,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -26763,7 +26763,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -27023,7 +27023,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -27044,7 +27044,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -27304,7 +27304,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -27325,7 +27325,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -27567,7 +27567,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -27588,7 +27588,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -27846,7 +27846,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -27867,7 +27867,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -28127,7 +28127,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -28148,7 +28148,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -28425,7 +28425,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -28446,7 +28446,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -28708,7 +28708,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -28729,7 +28729,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -29006,7 +29006,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -29027,7 +29027,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -29272,22 +29272,22 @@ class DefaultApi
         // form params
         if ($file0 !== null) {
             $multipart = true;
-            $formParams['file0'] = try_fopen(ObjectSerializer::toFormValue($file0), 'rb');
+            $formParams['file0'] = Utils::tryFopen(ObjectSerializer::toFormValue($file0), 'rb');
         }
         // form params
         if ($file1 !== null) {
             $multipart = true;
-            $formParams['file1'] = try_fopen(ObjectSerializer::toFormValue($file1), 'rb');
+            $formParams['file1'] = Utils::tryFopen(ObjectSerializer::toFormValue($file1), 'rb');
         }
         // form params
         if ($file2 !== null) {
             $multipart = true;
-            $formParams['file2'] = try_fopen(ObjectSerializer::toFormValue($file2), 'rb');
+            $formParams['file2'] = Utils::tryFopen(ObjectSerializer::toFormValue($file2), 'rb');
         }
         // form params
         if ($file3 !== null) {
             $multipart = true;
-            $formParams['file3'] = try_fopen(ObjectSerializer::toFormValue($file3), 'rb');
+            $formParams['file3'] = Utils::tryFopen(ObjectSerializer::toFormValue($file3), 'rb');
         }
         // body params
         $_tempBody = null;
@@ -29328,7 +29328,7 @@ class DefaultApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = build_query($formParams);
+                $httpBody = Query::build($formParams);
             }
         }
 
@@ -29349,7 +29349,7 @@ class DefaultApi
             $headers
         );
 
-        $query = build_query($queryParams);
+        $query = Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
