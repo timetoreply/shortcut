@@ -1,11 +1,11 @@
-# HistoryReferenceGeneral
+# # HistoryReferenceGeneral
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **object** | The ID of the entity referenced. | 
-**entityType** | **string** | The type of entity referenced. | 
-**name** | **string** | The name of the entity referenced. | 
+**id** | [**\Timetoreply\Shortcut\Model\HistoryReferenceBranchId**](HistoryReferenceBranchId.md) |  |
+**entityType** | **string** | The type of entity referenced. |
+**name** | **string** | The name of the entity referenced. |
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

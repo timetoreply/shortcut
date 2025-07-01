@@ -1,0 +1,13 @@
+{
+  "packageName": "timetoreply/shortcut",
+  "composerPackageName": "timetoreply/shortcut",
+  "packageVersion": "0.4.0",
+  "artifactVersion": "0.4.0",
+  "phpVersion": "8.4",
+  "srcBasePath": "src",
+  "invokerPackage": "Timetoreply\\Shortcut",
+  "apiPackage": "Api",
+  "modelPackage": "Model",
+  "variableNamingConvention": "camelCase",
+  "licenseName": "proprietary"
+}

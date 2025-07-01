@@ -1,24 +1,26 @@
 {
     "name": "timetoreply/shortcut",
-    "version": "0.3.0",
-    "description": "",
+    "version": "0.4.0",
+    "description": "Shortcut API",
     "keywords": [
-        "swagger",
+        "openapitools",
+        "openapi-generator",
+        "openapi",
         "php",
         "sdk",
         "rest",
         "api"
     ],
-    "homepage": "http://swagger.io",
+    "homepage": "https://openapi-generator.tech",
     "license": "proprietary",
     "authors": [
         {
-            "name": "Swagger and contributors",
-            "homepage": "https://github.com/swagger-api/swagger-codegen"
+            "name": "OpenAPI",
+            "homepage": "https://openapi-generator.tech"
         }
     ],
     "require": {
-        "php": "^7.4 || ^8.0",
+        "php": "^8.1",
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
@@ -33,6 +35,6 @@
         "psr-4": { "Timetoreply\\Shortcut\\" : "src/" }
     },
     "autoload-dev": {
-        "psr-4": { "Timetoreply\\Shortcut\\" : "test/" }
+        "psr-4": { "Timetoreply\\Shortcut\\Test\\" : "test/" }
     }
 }

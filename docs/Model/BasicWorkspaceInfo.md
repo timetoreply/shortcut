@@ -1,10 +1,15 @@
-# BasicWorkspaceInfo
+# # BasicWorkspaceInfo
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**urlSlug** | **string** |  | 
-**estimateScale** | **int[]** |  | 
+**id** | **string** |  |
+**createdAt** | **\DateTime** |  |
+**defaultWorkflowId** | **int** |  |
+**estimateScale** | **int[]** |  |
+**name** | **string** |  |
+**urlSlug** | **string** |  |
+**utcOffset** | **string** |  |
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
