@@ -15,4 +15,16 @@ openapi-generator-cli generate \
 --git-user-id timetoreply
 ```
 
-4) Ensure you are happy with the generated code, then push the changes.
+4) Update the installation instructions in the `README.md` file if necessary. The installation command should look like this:
+
+````markdown
+### Installation
+
+The library can be installed via Composer:
+
+```sh
+composer require timetoreply/shortcut
+```
+````
+
+5) Ensure you are happy with the generated code, then push the changes.

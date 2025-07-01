@@ -9,45 +9,21 @@ Shortcut API
 
 PHP 8.1 and later.
 
-### Composer
+### Installation
 
-To install the bindings via [Composer](https://getcomposer.org/), add the following to `composer.json`:
+The library can be installed via Composer:
 
-```json
-{
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/timetoreply/shortcut.git"
-    }
-  ],
-  "require": {
-    "timetoreply/shortcut": "*@dev"
-  }
-}
+```sh
+composer require timetoreply/shortcut
 ```
 
 Then run `composer install`
-
-### Manual Installation
-
-Download the files and include `autoload.php`:
-
-```php
-<?php
-require_once('/path/to/timetoreply/shortcut/vendor/autoload.php');
-```
 
 ## Getting Started
 
 Please follow the [installation procedure](#installation--usage) and then run the following:
 
 ```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
 // Configure API key authorization: api_token
 $config = Timetoreply\Shortcut\Configuration::getDefaultConfiguration()->setApiKey('Shortcut-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
